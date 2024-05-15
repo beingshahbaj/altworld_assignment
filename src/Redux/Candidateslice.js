@@ -13,8 +13,10 @@ const dataSlice = createSlice({
   name: "data",
   initialState: {
     items: [],
+    filteredItems: [],
     status: "idle",
     error: null,
+    searchquery: "",
     id: null,
   },
   reducers: {
@@ -32,6 +34,15 @@ const dataSlice = createSlice({
       if (index !== -1) {
         state.items[index].status = true;
       }
+    },
+    search: (state, action) => {
+      state.searchquery = action.payload;
+      const searchTerm = action.payload.toLowerCase();
+      state.filteredItems = state.items.filter(
+        (user) =>
+          user.name.toLowerCase().includes(searchTerm) ||
+          user.email.toLowerCase().includes(searchTerm)
+      );
     },
   },
 
@@ -51,6 +62,6 @@ const dataSlice = createSlice({
   },
 });
 
-export const { setSelectedEmail, rejectcandidate, sortlisted } =
+export const { setSelectedEmail, rejectcandidate, sortlisted, search } =
   dataSlice.actions;
 export default dataSlice.reducer;

@@ -5,11 +5,18 @@ import { useSelector } from "react-redux";
 function Review() {
   const [review, setReview] = useState([]);
 
-  const { items, status, error } = useSelector((state) => state.data);
+  const { items, status, error, searchquery } = useSelector(
+    (state) => state.data
+  );
+  const filteredItems = useSelector((state) => state.data.filteredItems);
 
   useEffect(() => {
-    setReview(items.filter((user) => user.status === "pending"));
-  }, [items]);
+    if (searchquery.length > 0) {
+      setReview(filteredItems.filter((user) => user.status === "pending"));
+    } else if (items.length > 0 || searchquery.length === 0) {
+      setReview(items.filter((user) => user.status === "pending"));
+    }
+  }, [items, filteredItems]);
 
   return (
     <div className="w-full h-[100%]">

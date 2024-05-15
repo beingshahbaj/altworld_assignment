@@ -5,16 +5,21 @@ import { useSelector } from "react-redux";
 function Rejected() {
   const [rejectedcan, setRejectedcan] = useState([]);
 
-  const { items, status, error } = useSelector((state) => state.data);
-
-  console.log(items);
+  const { items, status, error, searchquery } = useSelector(
+    (state) => state.data
+  );
+  const filteredItems = useSelector((state) => state.data.filteredItems);
 
   useEffect(() => {
-    setRejectedcan(items.filter((user) => user.status === false));
-  }, [items]);
+    if (searchquery.length > 0) {
+      setRejectedcan(filteredItems.filter((user) => user.status === false));
+    } else if (items.length > 0 || searchquery.length === 0) {
+      setRejectedcan(items.filter((user) => user.status === false));
+    }
+  }, [items, filteredItems]);
 
   return (
-    <div className="w-full h-[100%] ">
+    <div className="w-full h-[100%] flex-1 ">
       <div className="flex items-center justify-between px-10 py-2 font-bold text-[11px] text-slate-600">
         <h1>Candidate</h1>
         <h1>Score</h1>

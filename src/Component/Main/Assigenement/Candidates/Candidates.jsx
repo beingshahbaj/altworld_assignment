@@ -1,10 +1,14 @@
 import { Edit } from "@mui/icons-material";
 import React from "react";
 import Tabs from "./Tabs/Tabs";
+import { Input } from "antd";
+import { useDispatch } from "react-redux";
+import { search } from "../../../../Redux/Candidateslice";
 
 function Candidates() {
+  const dispatch = useDispatch();
   return (
-    <div className="w-[35%] h-[75vh] bg-[#ffffff] flex flex-col rounded-[20px] shadow-2xl overflow-hidden">
+    <div className="w-[35%] h-[] bg-[#ffffff] flex flex-col rounded-[10px] shadow-2xl overflow-hidden">
       <div className="w-full h-max gap-2 flex flex-col p-4">
         <div className="flex items-center justify-between w-full">
           <h1 className="text-md text-slate-900 font-bold ">Sales BDE</h1>
@@ -43,6 +47,13 @@ function Candidates() {
             11 march 2024
           </h1>
         </div>
+      </div>
+      <div className="px-3 ">
+        <Input
+          type="Search"
+          placeholder="Search candidate"
+          onChange={(e) => dispatch(search(e.target.value))}
+        />
       </div>
       <div className="w-full overflow-y-scroll  flex-1 h-[100%] flex justify-center">
         <Tabs />

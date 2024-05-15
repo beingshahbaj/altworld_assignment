@@ -13,7 +13,7 @@ function Candidate({ key, singlecandidate, index }) {
       onClick={() => handleEmailClick(singlecandidate.id)}
       // style={{ backgroundColor: index % 2 === 0 ? "#f0f0f0" : "#f8f9fa" }}
       key={key}
-      className=" hover:shadow-lg  shadow-sm transition-all duration-400  w-full cursor-pointer flex items-center justify-between py-2 pl-5 pr-10"
+      className=" hover:shadow-lg h-full  shadow-sm transition-all duration-400  w-full cursor-pointer flex items-center justify-between py-2 pl-5 pr-10"
     >
       <div className="flex items-center gap-3">
         <img

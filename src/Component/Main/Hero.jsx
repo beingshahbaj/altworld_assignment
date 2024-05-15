@@ -15,7 +15,7 @@ function Hero() {
   }, [status, dispatch]);
 
   return (
-    <div className="w-full h-full flex">
+    <div className="w-full  h-[92%] flex">
       <Sidebar />
       <Assignement />
     </div>

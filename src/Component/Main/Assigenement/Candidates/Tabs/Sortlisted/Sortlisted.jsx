@@ -5,11 +5,19 @@ import { useSelector } from "react-redux";
 
 function Sortlisted() {
   const [selected, setselected] = useState([]);
-  const { items, status, error } = useSelector((state) => state.data);
+  const { items, status, error, searchquery } = useSelector(
+    (state) => state.data
+  );
+
+  const filteredItems = useSelector((state) => state.data.filteredItems);
 
   useEffect(() => {
-    setselected(items.filter((user) => user.status === true));
-  }, [items]);
+    if (searchquery.length > 0) {
+      setselected(filteredItems.filter((user) => user.status === true));
+    } else if (items.length > 0 || searchquery.length === 0) {
+      setselected(items.filter((user) => user.status === true));
+    }
+  }, [items, filteredItems]);
 
   return (
     <div className="w-full h-[100%] ">
