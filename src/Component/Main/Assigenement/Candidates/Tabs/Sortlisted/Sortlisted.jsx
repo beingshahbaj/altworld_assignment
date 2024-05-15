@@ -25,10 +25,15 @@ function Sortlisted() {
         <h1>Candidate</h1>
         <h1>Score</h1>
       </div>
-      {selected.length > 0 &&
+      {selected.length > 0 ? (
         selected.map((user, i) => (
           <Candidate key={user.id} singlecandidate={user} index={i} />
-        ))}
+        ))
+      ) : (
+        <h1 className="text-lg font-bold text-slate-800 text-center">
+          Add candidate in list
+        </h1>
+      )}
     </div>
   );
 }

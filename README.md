@@ -19,5 +19,5 @@ Detailed instructions on how to install, configure, and get the project running.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/project-name.git
+   git clone https://github.com/beingshahbaj/altworld_assignment.git
    ```

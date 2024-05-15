@@ -24,10 +24,15 @@ function Review() {
         <h1>Candidate</h1>
         <h1>Score</h1>
       </div>
-      {review.length > 0 &&
+      {review.length > 0 ? (
         review.map((user, i) => (
           <Candidate key={user.id} singlecandidate={user} index={i} />
-        ))}
+        ))
+      ) : (
+        <h1 className="text-lg font-bold text-slate-800 text-center">
+          Add candidate in list
+        </h1>
+      )}
     </div>
   );
 }
