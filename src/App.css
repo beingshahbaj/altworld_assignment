@@ -1,0 +1,5 @@
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-ink-bar {
+  position: absolute;
+  background: #000000;
+  pointer-events: none;
+}

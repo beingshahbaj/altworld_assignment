@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-ink-bar {
+  position: absolute;
+  background: #898989;
+  pointer-events: none;
+}
+
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs
+  > .ant-tabs-nav
+  .ant-tabs-nav-wrap,
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs
+  > div
+  > .ant-tabs-nav
+  .ant-tabs-nav-wrap {
+  position: relative;
+  display: flex;
+  flex: auto;
+  align-self: stretch;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translate(0);
+  justify-content: center;
+}
+
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs-top > .ant-tabs-nav,
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs-bottom > .ant-tabs-nav,
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs-top
+  > div
+  > .ant-tabs-nav,
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs-bottom
+  > div
+  > .ant-tabs-nav {
+  margin: 0 0 0 0;
+}
+
+/* For WebKit-based browsers (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+  display: none;
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Remove scrollbar for WebKit-based browsers (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Remove scrollbar for Internet Explorer and Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+/* Remove scrollbar for Firefox */
+* {
+  scrollbar-width: none;
+}
+
+.R:hover {
+  background-color: RED;
+}
+
+:where(.css-dev-only-do-not-override-1r287do).ant-tabs
+  .ant-tabs-tab
+  + .ant-tabs-tab {
+  margin: 0 0 0 15px;
+}
