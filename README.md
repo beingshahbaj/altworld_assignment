@@ -1,7 +1,3 @@
-# React + Vite
-
-# altworld assignment
-
 # Alt World Assignment - Candidate Review Application
 
 This application is designed to facilitate the process of reviewing and evaluating candidates during the recruitment process. It provides a user-friendly interface to view a list of candidates, along with their relevant details such as name, email, behavioral marks, communication marks, situation handling marks, about, experience, hobby, introduction, full marks, percentage, status, and image.
