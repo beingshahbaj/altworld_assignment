@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 import Candidate from "../Candidate";
 import { useSelector } from "react-redux";
+import { Spin } from "antd";
 
 function Sortlisted() {
   const [selected, setselected] = useState([]);
@@ -18,6 +19,22 @@ function Sortlisted() {
       setselected(items.filter((user) => user.status === true));
     }
   }, [items, filteredItems]);
+
+  if (status === "loading") {
+    return (
+      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <Spin />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <h1 className="text-lg font-bold text-red-500">{error}</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full h-[100%] ">

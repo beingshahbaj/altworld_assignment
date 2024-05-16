@@ -40,6 +40,13 @@ function Singlecandidate() {
     );
   };
 
+  if (error) {
+    return (
+      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <h1 className="text-lg font-bold text-red-500">{error}</h1>
+      </div>
+    );
+  }
   return (
     <div className="flex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
       <div className="flex-1 rounded-lg overflow-hidden">

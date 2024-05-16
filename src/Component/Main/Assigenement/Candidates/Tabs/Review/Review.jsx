@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Candidate from "../Candidate";
 import { useSelector } from "react-redux";
+import { Spin } from "antd";
 
 function Review() {
   const [review, setReview] = useState([]);
@@ -17,7 +18,21 @@ function Review() {
       setReview(items.filter((user) => user.status === "pending"));
     }
   }, [items, filteredItems]);
+  if (status === "loading") {
+    return (
+      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <Spin />
+      </div>
+    );
+  }
 
+  if (error) {
+    return (
+      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <h1 className="text-lg font-bold text-red-500">{error}</h1>
+      </div>
+    );
+  }
   return (
     <div className="w-full h-[100%]">
       <div className="flex items-center justify-between px-10 py-2 font-bold text-[11px] text-slate-600">

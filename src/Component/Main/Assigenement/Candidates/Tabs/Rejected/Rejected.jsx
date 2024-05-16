@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import Candidate from "../Candidate";
 import { useSelector } from "react-redux";
+import { Spin } from "antd";
 
 function Rejected() {
   const [rejectedcan, setRejectedcan] = useState([]);
-
   const { items, status, error, searchquery } = useSelector(
     (state) => state.data
   );
@@ -18,8 +18,24 @@ function Rejected() {
     }
   }, [items, filteredItems]);
 
+  if (status === "loading") {
+    return (
+      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <Spin />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <h1 className="text-lg font-bold text-red-500">{error}</h1>
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full h-[100%] flex-1 ">
+    <div className="w-full h-[100%] flex-1">
       <div className="flex items-center justify-between px-10 py-2 font-bold text-[11px] text-slate-600">
         <h1>Candidate</h1>
         <h1>Score</h1>
@@ -30,7 +46,7 @@ function Rejected() {
         ))
       ) : (
         <h1 className="text-lg font-bold text-slate-800 text-center">
-          Add candidate in list
+          No user in rejected list
         </h1>
       )}
     </div>
