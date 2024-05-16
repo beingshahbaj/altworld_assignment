@@ -51,7 +51,7 @@ function Singlecandidate() {
           <h1 className="text-center text-sm font-medium p-3">
             {InterviewQuestions[questions]}
           </h1>
-          <div className="w-full flex items-center justify-between p-4 bg-slate-900">
+          <div className="w-full flex items-center justify-between p-4 shadow-inner bg-slate-900">
             <div
               onClick={handlePrevious}
               className="p-2 bg-slate-100 rounded-lg cursor-pointer"

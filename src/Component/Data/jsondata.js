@@ -1,20 +1,22 @@
+import img from "./../../../public/shahbaj khan.jpg";
+
 export const User = [
   {
-    name: "Aarav Patel",
-    email: "aarav.patel@email.com",
+    name: "Shahbaj khan",
+    email: "shahbaj912933@email.com",
     id: "1",
-    behavioralMarks: 7,
+    behavioralMarks: 8,
     communicationMarks: 8,
-    situationHandlingMarks: 6,
+    situationHandlingMarks: 8,
     about: "An enthusiastic software engineer with a love for problem-solving.",
     experience: "2 years of experience in software development",
     hobby: "Reading books",
     introduction:
-      "Hi, I am Aarav Patel, an adept software engineer skilled in back-end technologies.",
+      "Hi, I am shahbaj khan, an adept software engineer skilled in frontend technologies.",
     fullMarks: 30,
-    percentage: 70,
+    percentage: 80,
     status: "pending",
-    imageUrl: "https://randomuser.me/api/portraits/men/2.jpg",
+    imageUrl: img,
   },
   {
     name: "Aditi Sharma",
