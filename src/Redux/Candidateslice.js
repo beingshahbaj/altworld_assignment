@@ -26,13 +26,30 @@ const dataSlice = createSlice({
     rejectcandidate: (state, action) => {
       const index = state.items.findIndex((user) => user.id === action.payload);
       if (index !== -1) {
-        state.items[index].status = false;
+        let currontStatus = state.items[index].status;
+        state.items[index].status =
+          currontStatus === "pending"
+            ? false
+            : currontStatus === false
+            ? "pending"
+            : currontStatus === true
+            ? false
+            : null;
       }
     },
     sortlisted: (state, action) => {
       const index = state.items.findIndex((user) => user.id === action.payload);
       if (index !== -1) {
-        state.items[index].status = true;
+        let currontStatus = state.items[index].status;
+
+        state.items[index].status =
+          currontStatus === "pending"
+            ? true
+            : currontStatus === true
+            ? "pending"
+            : currontStatus === false
+            ? true
+            : null;
       }
     },
     search: (state, action) => {
