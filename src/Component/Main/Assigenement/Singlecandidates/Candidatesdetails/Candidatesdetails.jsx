@@ -1,13 +1,16 @@
 import { Button } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   rejectcandidate,
   sortlisted,
 } from "../../../../../Redux/Candidateslice";
 import { useDispatch } from "react-redux";
+import { Check, RampRight } from "@mui/icons-material";
 
 function Candidatesdetails({ candidate }) {
   const dispatch = useDispatch();
+
+  useEffect(() => {}, [candidate]);
 
   return (
     <div className="w-full h-full py-3 flex flex-col  text-zinc-800">
@@ -123,18 +126,20 @@ function Candidatesdetails({ candidate }) {
             dispatch(sortlisted(candidate.id));
           }}
           type="primary"
-          className=" S flex-1 bg-[#2ebd59] font-bold"
+          className=" S flex-1 bg-[#2ebd59] font-bold  "
         >
-          SHORTLIST
+          {candidate.status === true ? "SHORTLISTED" : "SHORTLIST"}
+          {candidate.status === true && <Check />}
         </Button>
         <Button
           onClick={() => {
             dispatch(rejectcandidate(candidate.id));
           }}
           type="primary"
-          className=" R flex-1 font-bold bg-[#ecb22e]"
+          className=" R flex-1 font-bold  bg-[#ecb22e]"
         >
-          REJECT
+          {candidate.status === false ? "REJECTED" : "REJECT"}
+          {candidate.status === false && <Check className="" />}
         </Button>
       </div>
     </div>
