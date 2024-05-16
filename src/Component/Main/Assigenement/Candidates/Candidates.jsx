@@ -1,16 +1,16 @@
 import { Edit, Search } from "@mui/icons-material";
-import React from "react";
+import React, { useEffect } from "react";
 import Tabs from "./Tabs/Tabs";
 import { Input, Select } from "antd";
 import { useDispatch } from "react-redux";
-import { search } from "../../../../Redux/Candidateslice";
+import { search, short } from "../../../../Redux/Candidateslice";
 
 function Candidates() {
   const dispatch = useDispatch();
 
   const handleChange = (obj) => {
     const { value } = obj;
-    console.log(value);
+    dispatch(short(value));
   };
 
   return (
@@ -61,14 +61,13 @@ function Candidates() {
           onChange={(e) => dispatch(search(e.target.value))}
         />
         <Select
+          className="text-sx font-bold"
           labelInValue
           defaultValue={{
             value: "Default",
-            label: "Default",
+            label: "short can",
           }}
-          style={{
-            width: 120,
-          }}
+          style={{ color: "grey" }}
           onChange={handleChange}
           options={[
             {

@@ -5,7 +5,7 @@ export const fetchData = createAsyncThunk("data/fetchData", async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(User);
-    }, 1200);
+    }, 500);
   });
 });
 
@@ -61,6 +61,17 @@ const dataSlice = createSlice({
           user.email.toLowerCase().includes(searchTerm)
       );
     },
+    short: (state, action) => {
+      const name = action.payload;
+
+      if (name === "High") {
+        state.items.sort((a, b) => b.percentage - a.percentage);
+      } else if (name === "Low") {
+        state.items.sort((a, b) => a.percentage - b.percentage);
+      } else {
+        state.items.sort((a, b) => a.name.localeCompare(b.name));
+      }
+    },
   },
 
   extraReducers: (builder) => {
@@ -71,6 +82,7 @@ const dataSlice = createSlice({
       .addCase(fetchData.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.items = action.payload;
+        state.items.sort((a, b) => a.name.localeCompare(b.name));
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.status = "failed";
@@ -79,6 +91,6 @@ const dataSlice = createSlice({
   },
 });
 
-export const { setSelectedEmail, rejectcandidate, sortlisted, search } =
+export const { setSelectedEmail, rejectcandidate, sortlisted, search, short } =
   dataSlice.actions;
 export default dataSlice.reducer;
