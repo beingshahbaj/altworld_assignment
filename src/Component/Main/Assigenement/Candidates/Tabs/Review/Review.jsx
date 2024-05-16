@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Candidate from "../Candidate";
 import { useSelector } from "react-redux";
-import { Spin } from "antd";
+import { Empty, Spin } from "antd";
 
 function Review() {
   const [review, setReview] = useState([]);
@@ -29,6 +29,7 @@ function Review() {
   if (error) {
     return (
       <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <Empty />
         <h1 className="text-lg font-bold text-red-500">{error}</h1>
       </div>
     );
@@ -45,7 +46,7 @@ function Review() {
         ))
       ) : (
         <h1 className="text-lg font-bold text-slate-800 text-center">
-          Add candidate in list
+          <Empty />
         </h1>
       )}
     </div>

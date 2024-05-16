@@ -55,7 +55,7 @@ function Candidates() {
           onChange={(e) => dispatch(search(e.target.value))}
         />
       </div>
-      <div className="w-full overflow-y-scroll  flex-1 h-[100%] flex justify-center">
+      <div className="w-full flex-1 h-[100%] flex justify-center">
         <Tabs />
       </div>
     </div>

@@ -43,7 +43,12 @@ const items = [
 ];
 const Tab = () => (
   <div style={{ width: "100%", height: "100%" }}>
-    <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+    <Tabs
+      style={{ width: "100%", height: "100%", overflowY: "scroll" }}
+      defaultActiveKey="1"
+      items={items}
+      onChange={onChange}
+    />
   </div>
 );
 export default Tab;

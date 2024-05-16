@@ -1,4 +1,4 @@
-import { Spin } from "antd";
+import { Empty, Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { InterviewQuestions } from "../../../Data/Question";
@@ -42,7 +42,8 @@ function Singlecandidate() {
 
   if (error) {
     return (
-      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+      <div className="w-full h-[100%] flex-1 items-center justify-center lex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
+        <Empty />
         <h1 className="text-lg font-bold text-red-500">{error}</h1>
       </div>
     );

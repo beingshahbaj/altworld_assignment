@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Candidate from "../Candidate";
 import { useSelector } from "react-redux";
-import { Spin } from "antd";
+import { Empty, Spin } from "antd";
 
 function Rejected() {
   const [rejectedcan, setRejectedcan] = useState([]);
@@ -29,6 +29,7 @@ function Rejected() {
   if (error) {
     return (
       <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+        <Empty />
         <h1 className="text-lg font-bold text-red-500">{error}</h1>
       </div>
     );
@@ -45,8 +46,8 @@ function Rejected() {
           <Candidate key={user.id} singlecandidate={user} index={i} />
         ))
       ) : (
-        <h1 className="text-lg font-bold text-slate-800 text-center">
-          No user in rejected list
+        <h1 className="text-sm font-bold text-slate-800 text-center">
+          <Empty />
         </h1>
       )}
     </div>
