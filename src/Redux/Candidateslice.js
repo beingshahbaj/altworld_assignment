@@ -5,7 +5,7 @@ export const fetchData = createAsyncThunk("data/fetchData", async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(User);
-    }, 100);
+    }, 1200);
   });
 });
 

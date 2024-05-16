@@ -22,7 +22,7 @@ function Singlecandidate() {
 
   if (!singlec) {
     return (
-      <div className="w-full h-full flex items-center justify-center">
+      <div className="w-full h-full  items-center justify-center flex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
         <Spin />
       </div>
     );
