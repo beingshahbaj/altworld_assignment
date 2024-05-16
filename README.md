@@ -25,23 +25,3 @@ This application is designed to facilitate the process of reviewing and evaluati
 6. **Selection and Rejection**: Based on the candidate's performance and evaluation, users can select (shortlist) or reject candidates. The selected or rejected candidates will be automatically moved to their respective tabs.
 
 The application aims to streamline the candidate review process by providing a centralized platform where recruiters or hiring managers can easily access and evaluate candidate information. The tabbed interface, search functionality, and detailed candidate profiles contribute to an efficient and organized workflow.
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## Installation
-
-Detailed instructions on how to install, configure, and get the project running.
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/beingshahbaj/altworld_assignment.git
-   ```
-
-## usage
