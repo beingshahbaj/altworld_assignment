@@ -20,14 +20,6 @@ function Singlecandidate() {
     }
   }, [id, items]);
 
-  if (!singlec) {
-    return (
-      <div className="w-full h-full  items-center justify-center flex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
-        <Spin />
-      </div>
-    );
-  }
-
   const handlePrevious = () => {
     setquestion((prevQuestion) =>
       prevQuestion === 0 ? InterviewQuestions.length - 1 : prevQuestion - 1
@@ -39,6 +31,14 @@ function Singlecandidate() {
       prevQuestion === InterviewQuestions.length - 1 ? 0 : prevQuestion + 1
     );
   };
+
+  if (!singlec) {
+    return (
+      <div className="w-full h-full  items-center justify-center flex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
+        <Spin />
+      </div>
+    );
+  }
 
   if (error) {
     return (
