@@ -7,7 +7,7 @@ function App() {
   document.title = "altworld";
 
   return (
-    <div className="w-[100%]  h-[100vh] flex flex-col bg-[hsl(210deg 16.67% 97.65%)]">
+    <div className="w-[100%]  h-[100vh] flex flex-col bg-[rgb(246 255 254)]">
       <Navbar />
       <Hero />
     </div>

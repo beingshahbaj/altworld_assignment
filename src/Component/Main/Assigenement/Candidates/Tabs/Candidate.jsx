@@ -1,8 +1,10 @@
 import React from "react";
 import { setSelectedEmail } from "../../../../../Redux/Candidateslice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function Candidate({ key, singlecandidate, index }) {
+  const { id } = useSelector((state) => state.data);
+
   const dispatch = useDispatch();
 
   const handleEmailClick = (id) => {
@@ -11,7 +13,12 @@ function Candidate({ key, singlecandidate, index }) {
   return (
     <div
       onClick={() => handleEmailClick(singlecandidate.id)}
-      // style={{ backgroundColor: index % 2 === 0 ? "#f0f0f0" : "#f8f9fa" }}
+      style={{
+        backgroundColor:
+          id === singlecandidate.id || (id === null && singlecandidate.id === 1)
+            ? "rgb(239 239 239)"
+            : "inherit",
+      }}
       key={key}
       className=" hover:shadow-lg h-full  shadow-sm transition-all duration-400  w-full cursor-pointer flex items-center justify-between py-2 pl-5 pr-10"
     >
