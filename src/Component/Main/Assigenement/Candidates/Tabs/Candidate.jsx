@@ -2,7 +2,7 @@ import React from "react";
 import { setSelectedEmail } from "../../../../../Redux/Candidateslice";
 import { useDispatch, useSelector } from "react-redux";
 
-function Candidate({ key, singlecandidate, index }) {
+function Candidate({ singlecandidate, index }) {
   const { id } = useSelector((state) => state.data);
 
   const dispatch = useDispatch();
@@ -19,7 +19,6 @@ function Candidate({ key, singlecandidate, index }) {
             ? "rgb(239 239 239)"
             : "inherit",
       }}
-      key={key}
       className=" hover:shadow-lg h-full  shadow-sm transition-all duration-400  w-full cursor-pointer flex items-center justify-between py-2 pl-5 pr-10"
     >
       <div className="flex items-center gap-3">

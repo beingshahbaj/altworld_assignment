@@ -42,7 +42,9 @@ function Review() {
       </div>
       {review.length > 0 ? (
         review.map((user, i) => (
-          <Candidate key={user.id} singlecandidate={user} index={i} />
+          <div key={user.id} className="w-full">
+            <Candidate singlecandidate={user} index={i} />
+          </div>
         ))
       ) : (
         <h1 className="text-lg font-bold text-slate-800 text-center">

@@ -1,12 +1,18 @@
-import { Edit } from "@mui/icons-material";
+import { Edit, Search } from "@mui/icons-material";
 import React from "react";
 import Tabs from "./Tabs/Tabs";
-import { Input } from "antd";
+import { Input, Select } from "antd";
 import { useDispatch } from "react-redux";
 import { search } from "../../../../Redux/Candidateslice";
 
 function Candidates() {
   const dispatch = useDispatch();
+
+  const handleChange = (obj) => {
+    const { value } = obj;
+    console.log(value);
+  };
+
   return (
     <div className="w-[35%] h-[] bg-[#ffffff] flex flex-col rounded-[10px] shadow-2xl overflow-hidden">
       <div className="w-full h-max gap-2 flex flex-col p-4">
@@ -48,11 +54,36 @@ function Candidates() {
           </h1>
         </div>
       </div>
-      <div className="px-3 ">
+      <div className="px-3 pb-3 flex items-center gap-3 ">
         <Input
           type="Search"
-          placeholder="Search candidate"
+          placeholder="search candidate"
           onChange={(e) => dispatch(search(e.target.value))}
+        />
+        <Select
+          labelInValue
+          defaultValue={{
+            value: "Default",
+            label: "Default",
+          }}
+          style={{
+            width: 120,
+          }}
+          onChange={handleChange}
+          options={[
+            {
+              value: "Default",
+              label: "Default",
+            },
+            {
+              value: "High",
+              label: "High to low",
+            },
+            {
+              value: "Low",
+              label: "Low to high",
+            },
+          ]}
         />
       </div>
       <div className="w-full flex-1 h-[100%] flex justify-center">

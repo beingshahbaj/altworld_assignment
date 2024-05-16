@@ -43,7 +43,9 @@ function Rejected() {
       </div>
       {rejectedcan.length > 0 ? (
         rejectedcan.map((user, i) => (
-          <Candidate key={user.id} singlecandidate={user} index={i} />
+          <div key={user.id} className="w-full">
+            <Candidate singlecandidate={user} index={i} />
+          </div>
         ))
       ) : (
         <h1 className="text-sm font-bold text-slate-800 text-center">
