@@ -2,25 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-ink-bar {
+.ant-tabs-ink-bar {
   position: absolute;
   background: #898989 !important;
   pointer-events: none;
-}
-
-:where(.css-dev-only-do-not-override-1r287do).ant-tabs
-  > .ant-tabs-nav
-  .ant-tabs-nav-wrap,
-:where(.css-dev-only-do-not-override-1r287do).ant-tabs
-  > div
-  > .ant-tabs-nav
-  .ant-tabs-nav-wrap {
-  position: relative;
-  display: flex;
-  flex: auto;
-  overflow: hidden;
-  white-space: nowrap;
-  transform: translate(0);
 }
 
 .ant-tabs-nav {
@@ -52,10 +37,8 @@
   background-color: RED;
 }
 
-:where(.css-dev-only-do-not-override-1r287do).ant-tabs
-  .ant-tabs-tab
-  + .ant-tabs-tab {
-  margin: 0 0 0 15px;
+.ant-tabs-tab {
+  margin: 0 0 0 15px !important;
 }
 
 .ant-tabs-nav-wrap {
