@@ -37,10 +37,6 @@
   background-color: RED;
 }
 
-.ant-tabs-tab {
-  margin: 0 0 0 15px !important;
-}
-
 .ant-tabs-nav-wrap {
   justify-content: center !important;
   align-items: center !important;
