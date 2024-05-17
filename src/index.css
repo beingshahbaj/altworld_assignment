@@ -21,7 +21,7 @@
   overflow: hidden;
   white-space: nowrap;
   transform: translate(0);
-  justify-content: center;
+  justify-content: center !important;
 }
 
 .ant-tabs-nav {
