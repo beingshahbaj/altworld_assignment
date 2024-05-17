@@ -4,7 +4,7 @@
 
 :where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-ink-bar {
   position: absolute;
-  background: #898989;
+  background: #898989 !important;
   pointer-events: none;
 }
 
@@ -18,7 +18,6 @@
   position: relative;
   display: flex;
   flex: auto;
-  align-self: stretch;
   overflow: hidden;
   white-space: nowrap;
   transform: translate(0);
@@ -61,5 +60,5 @@
 }
 
 .ant-tabs-nav-wrap {
-  align-items: center;
+  align-items: center !important;
 }
