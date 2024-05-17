@@ -21,7 +21,6 @@
   overflow: hidden;
   white-space: nowrap;
   transform: translate(0);
-  justify-content: center !important;
 }
 
 .ant-tabs-nav {
@@ -60,5 +59,6 @@
 }
 
 .ant-tabs-nav-wrap {
+  justify-content: center !important;
   align-items: center !important;
 }
