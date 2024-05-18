@@ -28,7 +28,7 @@ function Rejected() {
 
   if (error) {
     return (
-      <div className="w-full h-[100%] flex-1 flex items-center justify-center">
+      <div className="w-full flex-col h-[100%] flex-1 flex items-center justify-center">
         <Empty />
         <h1 className="text-lg font-bold text-red-500">{error}</h1>
       </div>

@@ -2,10 +2,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { User } from "../Component/Data/jsondata";
 
 export const fetchData = createAsyncThunk("data/fetchData", async () => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, res) => {
     setTimeout(() => {
       resolve(User);
-    }, 500);
+      // res("data is no available");
+    }, 2000);
   });
 });
 
@@ -24,10 +25,10 @@ const dataSlice = createSlice({
       state.id = action.payload;
     },
     rejectcandidate: (state, action) => {
-      const index = state.items.findIndex((user) => user.id === action.payload);
-      if (index !== -1) {
-        let currontStatus = state.items[index].status;
-        state.items[index].status =
+      const obj = state.items.find((user) => user.id === action.payload);
+      if (obj) {
+        let currontStatus = obj.status;
+        obj.status =
           currontStatus === "pending"
             ? false
             : currontStatus === false
@@ -63,9 +64,14 @@ const dataSlice = createSlice({
     },
     short: (state, action) => {
       const name = action.payload;
-
       if (name === "High") {
-        state.items.sort((a, b) => b.percentage - a.percentage);
+        state.items.sort((a, b) => {
+          const first =
+            a.behavioralMarks + a.communicationMarks + a.situationHandlingMarks;
+          const second =
+            b.behavioralMarks + b.communicationMarks + b.situationHandlingMarks;
+          return first - second;
+        });
       } else if (name === "Low") {
         state.items.sort((a, b) => a.percentage - b.percentage);
       } else {

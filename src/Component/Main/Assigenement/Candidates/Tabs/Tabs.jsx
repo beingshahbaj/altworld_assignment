@@ -25,7 +25,7 @@ const items = [
     label: (
       <div className="text-slate-600 gap-2 font-bold flex items-center text-[12px] px-3 py-2 rounded-lg shadow-md">
         <People style={{ width: "0.5em", height: "0.5em", color: "green" }} />
-        Shortlisted
+        Sortlisted
       </div>
     ),
     children: <Sortlisted />,

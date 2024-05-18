@@ -32,19 +32,19 @@ function Singlecandidate() {
     );
   };
 
-  if (!singlec) {
+  if (error) {
     return (
-      <div className="w-full h-full  items-center justify-center flex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
-        <Spin />
+      <div className="w-full h-[100%] flex-1 flex-col items-center justify-center lex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
+        <Empty />
+        <h1 className="text-lg font-bold text-red-500">{error}</h1>
       </div>
     );
   }
 
-  if (error) {
+  if (!singlec) {
     return (
-      <div className="w-full h-[100%] flex-1 items-center justify-center lex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
-        <Empty />
-        <h1 className="text-lg font-bold text-red-500">{error}</h1>
+      <div className="w-full h-full  items-center justify-center flex-1 flex gap-6 rounded-lg bg-[#ffffff] shadow-2xl shd p-2 pl-5">
+        <Spin />
       </div>
     );
   }
